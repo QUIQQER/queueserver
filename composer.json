@@ -21,7 +21,7 @@
     }
     ,"autoload": {
   "psr-4": {
-      "QUI\\QueueServer\\": "src/qui/queueserver"
+      "QUI\\QueueServer\\": "src/QUI/QueueServer"
    }
 }
 
