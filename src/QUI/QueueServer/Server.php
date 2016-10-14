@@ -102,11 +102,7 @@ class Server implements IQueueServer
             self::deleteJob($jobId);
         }
 
-        return array(
-            'id'     => $jobId,
-            'result' => $jobData['result'],
-            'status' => $jobData['status']
-        );
+        return $jobData['resultData'];
     }
 
     /**
@@ -204,6 +200,8 @@ class Server implements IQueueServer
      * Get Database entry for a job
      *
      * @param $jobId
+     * @return array
+     *
      * @throws QUI\Exception
      */
     protected static function getJobData($jobId)
@@ -224,6 +222,8 @@ class Server implements IQueueServer
                 )
             ), 404);
         }
+
+        return current($result);
     }
 
     /**
@@ -292,6 +292,17 @@ class Server implements IQueueServer
         try {
             $jobResult = $Worker->execute();
         } catch (\Exception $Exception) {
+            QUI\System\Log::addError(
+                QUI::getLocale()->get(
+                    'quiqqer/queueserver',
+                    'exception.queueserver.job.execution.error',
+                    array(
+                        'jobId' => $jobId,
+                        'error' => $Exception->getMessage()
+                    )
+                )
+            );
+
             self::setJobStatus($jobId, IQueueServer::JOB_STATUS_ERROR);
             return;
         }

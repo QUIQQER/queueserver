@@ -39,6 +39,10 @@
             <de><![CDATA[Der Queue-Job mit der ID #[jobId] kann nicht gelöscht werden, da er gerade bearbeitet wird.]]></de>
         </locale>
 
+        <locale name="exception.queueserver.job.execution.error">
+            <de><![CDATA[Bei Ausführung des Jobs #[jobId] ist ein Fehler aufgetreten: [error].]]></de>
+        </locale>
+
     </groups>
 
 </locales>

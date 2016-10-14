@@ -18,8 +18,6 @@ class Cron
      */
     public static function execute()
     {
-        ini_set('display_errors', 1);
-
         Server::executeNextJob();
     }
 }
