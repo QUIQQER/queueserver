@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queueserver>
+    <server class="\QUI\QueueServer\Server">
+        <title>
+            <locale group="quiqqer/queueserver" var="server.title" />
+        </title>
+        <description>
+            <locale group="quiqqer/queueserver" var="server.description" />
+        </description>
+    </server>
+</queueserver>

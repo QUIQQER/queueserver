@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+
+    <groups name="quiqqer/queueserver" datatype="js">
+
+    </groups>
+
+    <groups name="quiqqer/queueserver" datatype="php,js">
+
+    </groups>
+
+    <groups name="quiqqer/queueserver" datatype="php">
+
+        <locale name="server.title">
+            <de><![CDATA[QUIQQER Queue-Server]]></de>
+        </locale>
+        <locale name="server.description">
+            <de><![CDATA[Führt Jobs in regelmäßigen Abständen mittels eines cronjobs aus]]></de>
+        </locale>
+
+        <locale name="exception.queueserver.job.not.found">
+            <de><![CDATA[Der Queue-Job mit der ID #[jobId] wurde nicht gefunden.]]></de>
+        </locale>
+        <locale name="exception.queueserver.job.queue.error">
+            <de><![CDATA[Bei Erstellung des Queue-Jobs ist ein unerwarteter Fehler aufgetreten. Bitte wenden Sie sich an einen Administrator.]]></de>
+        </locale>
+
+        <locale name="exception.queueserver.job.worker.not.found">
+            <de><![CDATA[Der Job-Worker "[jobWorkerClass]" wurde nicht gefunden.]]></de>
+        </locale>
+
+        <locale name="exception.queueserver.result.job.queued">
+            <de><![CDATA[Der Queue-Job mit der ID #[jobId] wurde noch nicht bearbeitet.]]></de>
+        </locale>
+        <locale name="exception.queueserver.result.job.running">
+            <de><![CDATA[Der Queue-Job mit der ID #[jobId] wird gerade noch bearbeitet.]]></de>
+        </locale>
+        <locale name="exception.queueserver.cancel.job.running">
+            <de><![CDATA[Der Queue-Job mit der ID #[jobId] kann nicht gelöscht werden, da er gerade bearbeitet wird.]]></de>
+        </locale>
+
+    </groups>
+
+</locales>
