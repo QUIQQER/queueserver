@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crons>
     <cron exec="\QUI\QueueServer\Cron::execute">
-        <title>Queue-Server</title>
-        <description>Nächsten Queue-Job ausführen</description>
+        <title>
+            Queue-Server
+            <locale group="quiqqer/queueserver" var="cron.execute.title" />
+        </title>
+        <description>
+            Nächsten Queue-Job ausführen
+            <locale group="quiqqer/queueserver" var="cron.execute.description" />
+        </description>
+    </cron>
+    <cron exec="\QUI\QueueServer\Cron::cleanJobs">
+        <title>
+            <locale group="quiqqer/queueserver" var="cron.clean.title" />
+        </title>
+        <description>
+            <locale group="quiqqer/queueserver" var="cron.clean.description" />
+        </description>
+        <!-- available params -->
+        <params>
+            <param name="days">
+                <locale group="quiqqer/queueserver" value="cron.clean.param.days" />
+            </param>
+        </params>
     </cron>
 </crons>

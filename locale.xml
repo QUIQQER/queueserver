@@ -3,6 +3,60 @@
 
     <groups name="quiqqer/queueserver" datatype="js">
 
+        <locale name="joblist.panel.title">
+            <de><![CDATA[QUIQQER Queue-Server Job-Übersicht]]></de>
+        </locale>
+
+        <locale name="controls.joblist.status.1">
+            <de><![CDATA[In Warteschlange]]></de>
+        </locale>
+        <locale name="controls.joblist.status.2">
+            <de><![CDATA[In Bearbeitung]]></de>
+        </locale>
+        <locale name="controls.joblist.status.3">
+            <de><![CDATA[Abgeschlossen]]></de>
+        </locale>
+        <locale name="controls.joblist.status.4">
+            <de><![CDATA[Fehler!]]></de>
+        </locale>
+
+        <locale name="controls.joblist.panel.tbl.header.worker">
+            <de><![CDATA[Worker-Klasse]]></de>
+        </locale>
+        <locale name="controls.joblist.panel.tbl.header.priority">
+            <de><![CDATA[Priorität]]></de>
+        </locale>
+        <locale name="controls.joblist.panel.tbl.header.status">
+            <de><![CDATA[Status]]></de>
+        </locale>
+
+        <locale name="controls.joblist.details.title">
+            <de><![CDATA[QUIQQER Queue-Server Job #[jobId]]]></de>
+        </locale>
+        <locale name="controls.joblist.details.input">
+            <de><![CDATA[Input-Daten]]></de>
+        </locale>
+        <locale name="controls.joblist.details.output">
+            <de><![CDATA[Output-Daten]]></de>
+        </locale>
+        <locale name="controls.joblist.details.log">
+            <de><![CDATA[Job-Log]]></de>
+        </locale>
+
+        <locale name="controls.joblist.btn.cancel">
+            <de><![CDATA[Job abbrechen/löschen]]></de>
+        </locale>
+        <locale name="controls.joblist.btn.details">
+            <de><![CDATA[Job-Details]]></de>
+        </locale>
+
+        <locale name="controls.joblist.details.date.create">
+            <de><![CDATA[<b>Job erstellt</b>: [date]]]></de>
+        </locale>
+        <locale name="controls.joblist.details.date.update">
+            <de><![CDATA[<b>Letzte Aktualisierung</b>: [date]]]></de>
+        </locale>
+
     </groups>
 
     <groups name="quiqqer/queueserver" datatype="php,js">
@@ -38,9 +92,43 @@
         <locale name="exception.queueserver.cancel.job.running">
             <de><![CDATA[Der Queue-Job mit der ID #[jobId] kann nicht gelöscht werden, da er gerade bearbeitet wird.]]></de>
         </locale>
-
         <locale name="exception.queueserver.job.execution.error">
             <de><![CDATA[Bei Ausführung des Jobs #[jobId] ist ein Fehler aufgetreten: [error].]]></de>
+        </locale>
+
+        <locale name="success.job.cancel">
+            <de><![CDATA[Der Job #[jobId] wurde erfolgreich gelöscht.]]></de>
+        </locale>
+        <locale name="error.job.cancel.error">
+            <de><![CDATA[Beim Löschen des Jobs #[jobId] ist ein Fehler aufgetreten: [error].]]></de>
+        </locale>
+        <locale name="error.json.encode.job.result">
+            <de><![CDATA[Beim Versuch, den Ergebnis-Wert des Jobs mit JSON zu kodieren, ist ein Fehler aufgetreten: [error].]]></de>
+        </locale>
+        <locale name="log.queued">
+            <de><![CDATA[Der Job wurde zur Warteschlange hinzugefügt.]]></de>
+        </locale>
+
+
+        <locale name="menu.apps.joblist.title">
+            <de><![CDATA[QUIQQER Queue-Server Job-Übersicht]]></de>
+        </locale>
+
+        <!-- Crons -->
+        <locale name="cron.execute.title">
+            <de><![CDATA[QUIQQER Queue-Server Jobs abarbeiten]]></de>
+        </locale>
+        <locale name="cron.execute.description">
+            <de><![CDATA[Erledigt alle Jobs in der Warteschlange des QUIQQER Queue-Servers]]></de>
+        </locale>
+        <locale name="cron.clean.title">
+            <de><![CDATA[QUIQQER Queue-Server Warteschlange aufräumen]]></de>
+        </locale>
+        <locale name="cron.clean.description">
+            <de><![CDATA[Löscht alle abgeschlossenen und fehlerhaften Jobs, die älter als X Tage sind aus der Warteschlange]]></de>
+        </locale>
+        <locale name="cron.clean.param.days">
+            <de><![CDATA[Lösche abgeschlossene/fehlerhafte Crons, die älter als X Tage]]></de>
         </locale>
 
     </groups>

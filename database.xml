@@ -11,6 +11,8 @@
             <field type="TINYINT(1) NOT NULL">status</field>
             <field type="SMALLINT NOT NULL">priority</field>
             <field type="TINYINT(1) NOT NULL">deleteOnFinish</field>
+            <field type="INTEGER UNSIGNED NOT NULL">createTime</field>
+            <field type="INTEGER UNSIGNED NOT NULL">lastUpdateTime</field>
         </table>
 
     </global>

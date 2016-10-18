@@ -1,0 +1,53 @@
+.queueserver-joblist-panel-container {
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+
+.queueserver-joblist-jobstatus-1 {
+}
+
+.queueserver-joblist-jobstatus-2 {
+    color: #ffe55d;
+}
+
+.queueserver-joblist-jobstatus-3 {
+    color: #31801f;
+}
+
+.queueserver-joblist-jobstatus-4 {
+    font-weight: 900;
+    color: #ff1228;
+}
+
+.queueserver-jobslist-job-data,
+.queueserver-jobslist-job-log {
+    float: left;
+    padding: 20px;
+    height: 100%;
+    width: 50%
+}
+
+.queueserver-jobslist-job-log {
+    overflow: auto;
+}
+
+.queueserver-jobslist-job-data-input,
+.queueserver-jobslist-job-data-output {
+    float: left;
+    height: 50%;
+    overflow: auto;
+    width: 100%;
+}
+
+.queueserver-joblist-job-log-entry {
+    float: left;
+    margin-bottom: 10px;
+    width: 100%
+}
+
+.queueserver-jobslist-job-dates {
+    float: left;
+    margin-bottom: 25px;
+    width: 100%
+}

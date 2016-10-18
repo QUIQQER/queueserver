@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <item parent="/apps/"
+          name="queueserverjobs"
+          require="package/quiqqer/queueserver/bin/controls/JobList"
+          icon="fa fa-tasks"
+    >
+        <locale group="pcsg/grouppasswordmanager" var="menu.apps.joblist.title"/>
+    </item>
+</menu>
