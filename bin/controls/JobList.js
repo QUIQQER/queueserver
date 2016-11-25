@@ -79,6 +79,24 @@ define('package/quiqqer/queueserver/bin/controls/JobList', [
 
             // buttons
             this.addButton({
+                name     : 'repeat',
+                text     : QUILocale.get(lg, 'controls.joblist.btn.repeat'),
+                textimage: 'fa fa-repeat',
+                events   : {
+                    onClick: function () {
+                        self.Loader.show();
+
+                        self.$repeatJob(
+                            self.$Grid.getSelectedData()[0].id
+                        ).then(function (success) {
+                            self.Loader.hide();
+                            self.refresh();
+                        });
+                    }
+                }
+            });
+
+            this.addButton({
                 name     : 'cancel',
                 text     : QUILocale.get(lg, 'controls.joblist.btn.cancel'),
                 textimage: 'fa fa-ban',
@@ -88,7 +106,7 @@ define('package/quiqqer/queueserver/bin/controls/JobList', [
 
                         self.$deleteJob(
                             self.$Grid.getSelectedData()[0].id
-                        ).then(function(success) {
+                        ).then(function (success) {
                             self.Loader.hide();
                             self.refresh();
                         });
@@ -362,9 +380,25 @@ define('package/quiqqer/queueserver/bin/controls/JobList', [
          * @param {number} jobId
          * @returns {Promise}
          */
-        $deleteJob: function(jobId) {
+        $deleteJob: function (jobId) {
             return new Promise(function (resolve, reject) {
                 QUIAjax.get('package_quiqqer_queueserver_ajax_deleteJob', resolve, {
+                    'package': 'quiqqer/queueserver',
+                    jobId    : jobId,
+                    onError  : reject
+                });
+            });
+        },
+
+        /**
+         * Repeat execution of a job
+         *
+         * @param {number} jobId
+         * @returns {Promise}
+         */
+        $repeatJob: function (jobId) {
+            return new Promise(function (resolve, reject) {
+                QUIAjax.get('package_quiqqer_queueserver_ajax_repeatJob', resolve, {
                     'package': 'quiqqer/queueserver',
                     jobId    : jobId,
                     onError  : reject

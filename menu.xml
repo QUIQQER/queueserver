@@ -5,6 +5,6 @@
           require="package/quiqqer/queueserver/bin/controls/JobList"
           icon="fa fa-tasks"
     >
-        <locale group="pcsg/grouppasswordmanager" var="menu.apps.joblist.title"/>
+        <locale group="quiqqer/queueserver" var="menu.apps.joblist.title"/>
     </item>
 </menu>

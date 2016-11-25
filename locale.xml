@@ -43,6 +43,9 @@
             <de><![CDATA[Job-Log]]></de>
         </locale>
 
+        <locale name="controls.joblist.btn.repeat">
+            <de><![CDATA[Job erneut ausführen]]></de>
+        </locale>
         <locale name="controls.joblist.btn.cancel">
             <de><![CDATA[Job abbrechen/löschen]]></de>
         </locale>
@@ -60,6 +63,10 @@
     </groups>
 
     <groups name="quiqqer/queueserver" datatype="php,js">
+
+        <locale name="menu.apps.joblist.title">
+            <de><![CDATA[QUIQQER Queue-Server Job-Übersicht]]></de>
+        </locale>
 
     </groups>
 
@@ -107,11 +114,6 @@
         </locale>
         <locale name="log.queued">
             <de><![CDATA[Der Job wurde zur Warteschlange hinzugefügt.]]></de>
-        </locale>
-
-
-        <locale name="menu.apps.joblist.title">
-            <de><![CDATA[QUIQQER Queue-Server Job-Übersicht]]></de>
         </locale>
 
         <!-- Crons -->

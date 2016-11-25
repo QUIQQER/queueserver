@@ -28,7 +28,7 @@ class Server implements IQueueServer
     {
         try {
             QUI::getDataBase()->insert(
-                'queueserver_jobs',
+                self::getJobTable(),
                 array(
                     'jobData'        => json_encode($QueueJob->getData()),
                     'jobWorker'      => $QueueJob->getWorkerClass(),
@@ -153,7 +153,7 @@ class Server implements IQueueServer
 
         try {
             QUI::getDataBase()->update(
-                'queueserver_jobs',
+                self::getJobTable(),
                 array(
                     'resultData' => $result
                 ),
@@ -192,7 +192,7 @@ class Server implements IQueueServer
         }
 
         QUI::getDataBase()->delete(
-            'queueserver_jobs',
+            self::getJobTable(),
             array(
                 'id' => $jobId
             )
@@ -210,7 +210,7 @@ class Server implements IQueueServer
     public static function getJobData($jobId)
     {
         $result = QUI::getDataBase()->fetch(array(
-            'from'  => 'queueserver_jobs',
+            'from'  => self::getJobTable(),
             'where' => array(
                 'id' => $jobId
             )
@@ -246,7 +246,7 @@ class Server implements IQueueServer
 
         try {
             QUI::getDataBase()->update(
-                'queueserver_jobs',
+                self::getJobTable(),
                 array(
                     'status'         => $status,
                     'lastUpdateTime' => time()
@@ -335,7 +335,7 @@ class Server implements IQueueServer
     {
         $result = QUI::getDataBase()->fetch(array(
             'count' => 1,
-            'from'  => 'queueserver_jobs',
+            'from'  => self::getJobTable(),
             'where' => array(
                 'status' => self::JOB_STATUS_QUEUED
             )
@@ -360,12 +360,13 @@ class Server implements IQueueServer
                 'jobWorker',
                 'deleteOnFinish'
             ),
-            'from'   => 'queueserver_jobs',
+            'from'   => self::getJobTable(),
             'where'  => array(
                 'status' => self::JOB_STATUS_QUEUED
             ),
             'limit'  => 1,
             'order'  => array(
+                'id'       => 'ASC',
                 'priority' => 'DESC'
             )
         ));
@@ -409,14 +410,14 @@ class Server implements IQueueServer
                 'jobWorker',
                 'priority'
             ),
-            'from'   => 'queueserver_jobs',
+            'from'   => self::getJobTable(),
             'limit'  => $gridParams['limit'],
             'order'  => $sortOn . ' ' . $sortBy
         ));
 
         $resultCount = QUI::getDataBase()->fetch(array(
             'count' => 1,
-            'from'  => 'queueserver_jobs'
+            'from'  => self::getJobTable()
         ));
 
         return $Grid->parseResult(
@@ -441,7 +442,7 @@ class Server implements IQueueServer
         );
 
         QUI::getDataBase()->update(
-            'queueserver_jobs',
+            self::getJobTable(),
             array(
                 'jobLog' => json_encode($jobLog)
             ),
@@ -473,7 +474,7 @@ class Server implements IQueueServer
      * Delete all completed or failed jobs that are older than $days days
      *
      * @param integer $days
-     * @return bool - success
+     * @return void
      */
     public static function cleanJobs($days)
     {
@@ -481,17 +482,72 @@ class Server implements IQueueServer
         $seconds = time() - $seconds;
 
         QUI::getDataBase()->delete(
-            'queueserver_jobs',
+            self::getJobTable(),
             array(
                 'lastUpdateTime' => array(
                     'type'  => '<=',
                     'value' => $seconds
                 ),
-                'status' => array(
-                    'type' => 'IN',
+                'status'         => array(
+                    'type'  => 'IN',
                     'value' => array(self::JOB_STATUS_FINISHED, self::JOB_STATUS_ERROR)
                 )
             )
         );
+    }
+
+    /**
+     * Get table for jobs
+     *
+     * @return string
+     */
+    public static function getJobTable()
+    {
+        return QUI::getDBTableName('queueserver_jobs');
+    }
+
+    /**
+     * Clone a job and queue it immediately
+     *
+     * @param integer $jobId - Job ID
+     * @param integer $priority - (new) job priority
+     * @return integer
+     *
+     * @throws QUI\Exception
+     */
+    public static function cloneJob($jobId, $priority)
+    {
+        $jobData             = self::getJobData($jobId);
+        $jobData['priority'] = (int)$priority;
+
+        if (isset($jobData['id'])) {
+            unset($jobData['id']);
+        }
+
+        try {
+            QUI::getDataBase()->insert(
+                self::getJobTable(),
+                $jobData
+            );
+        } catch (\Exception $Exception) {
+            QUI\System\Log::addError(
+                self::class . ' -> cloneJob() :: ' . $Exception->getMessage()
+            );
+
+            throw new QUI\Exception(array(
+                'quiqqer/queueserver',
+                'exception.queueserver.job.clone.error'
+            ));
+        }
+
+        return QUI::getDataBase()->getPDO()->lastInsertId();
+    }
+
+    /**
+     * Close server connection
+     */
+    public static function closeConnection()
+    {
+        // nothing, there is no connection that needs to be closed
     }
 }
