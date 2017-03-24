@@ -10,9 +10,12 @@ QUI::$Ajax->registerFunction(
     function ($jobId) {
         $details = \QUI\QueueServer\Server::getJobData((int)$jobId);
 
-        $details['jobData']        = json_decode($details['jobData'], true);
+        if (!empty($details['jobData'])) {
+            $details['jobData'] = json_decode($details['jobData'], true);
+        }
+
         $details['resultData']     = json_decode($details['resultData'], true);
-        $details['jobLog']         = json_decode($details['jobLog'], true);
+    //        $details['jobLog']         = json_decode($details['jobLog'], true);
         $details['createTime']     = date('Y.m.d H:i:s', $details['createTime']);
         $details['lastUpdateTime'] = date('Y.m.d H:i:s', $details['lastUpdateTime']);
 
