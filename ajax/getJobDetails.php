@@ -14,8 +14,14 @@ QUI::$Ajax->registerFunction(
             $details['jobData'] = json_decode($details['jobData'], true);
         }
 
-        $details['resultData']     = json_decode($details['resultData'], true);
-    //        $details['jobLog']         = json_decode($details['jobLog'], true);
+        $details['resultData'] = json_decode($details['resultData'], true);
+
+        if (isset($details['jobLog'])
+            && is_string($details['jobLog'])
+        ) {
+            $details['jobLog'] = json_decode($details['jobLog'], true);
+        }
+
         $details['createTime']     = date('Y.m.d H:i:s', $details['createTime']);
         $details['lastUpdateTime'] = date('Y.m.d H:i:s', $details['lastUpdateTime']);
 
