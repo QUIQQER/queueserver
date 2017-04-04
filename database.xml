@@ -7,6 +7,7 @@
             <field type="bigint(20) NOT NULL PRIMARY KEY AUTO_INCREMENT">id</field>
             <field type="VARCHAR(255) NOT NULL">jobWorker</field>
             <field type="text NOT NULL">jobData</field>
+            <field type="MEDIUMTEXT NULL">jobLog</field>
             <field type="text NULL">resultData</field>
             <field type="TINYINT(1) NOT NULL">status</field>
             <field type="SMALLINT NOT NULL">priority</field>
