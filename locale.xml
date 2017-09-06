@@ -3,6 +3,15 @@
 
     <groups name="quiqqer/queueserver" datatype="js">
 
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Queueserver]]></de>
+            <en><![CDATA[QUIQQER - Queueserver]]></en>
+        </locale>
+        <locale name="package.description">
+            <de><![CDATA[QUIQQER Queue-Server Grundgerüst]]></de>
+            <en><![CDATA[QUIQQER Queue-Server Framework]]>></en>
+        </locale>
+
         <locale name="joblist.panel.title">
             <de><![CDATA[QUIQQER Queue-Server Job-Übersicht]]></de>
         </locale>
