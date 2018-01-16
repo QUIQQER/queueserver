@@ -1,28 +1,27 @@
 {
-    "name" : "quiqqer/queueserver",
-    "type" : "quiqqer-module",
-    "description" : "QUIQQER Queue-Server Framework",
-    "version" : "dev-dev",
-    "license" : "GPL-3.0+",
-    "authors" : [
-        {
-            "name": "Patrick Müller",
-            "email": "p.mueller@pcsg.de",
-            "homepage": "http://www.pcsg.de",
-            "role": "Developer"
-        }
-    ],
-    "support" : {
-        "email": "support@pcsg.de",
-        "url": "http://www.pcsg.de"
-    },
-    "require": {
-        "quiqqer\/queuemanager": "dev-dev"
+  "name": "quiqqer/queueserver",
+  "type": "quiqqer-module",
+  "description": "QUIQQER Queue-Server Framework",
+  "version": "dev-master",
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Patrick Müller",
+      "email": "p.mueller@pcsg.de",
+      "homepage": "http://www.pcsg.de",
+      "role": "Developer"
     }
-    ,"autoload": {
-  "psr-4": {
+  ],
+  "support": {
+    "email": "support@pcsg.de",
+    "url": "http://www.pcsg.de"
+  },
+  "require": {
+    "quiqqer\/queuemanager": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
       "QUI\\QueueServer\\": "src/QUI/QueueServer"
-   }
-}
-
+    }
+  }
 }
