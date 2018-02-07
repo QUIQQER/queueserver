@@ -520,27 +520,12 @@ class Server implements IQueueServer
         $jobData             = self::getJobData($jobId);
         $jobData['priority'] = (int)$priority;
 
-        if (isset($jobData['id'])) {
-            unset($jobData['id']);
-        }
+        $CloneJob = new QueueJob(
+            $jobData['jobWorker'],
+            json_decode($jobData['jobData'], true)
+        );
 
-        try {
-            QUI::getDataBase()->insert(
-                self::getJobTable(),
-                $jobData
-            );
-        } catch (\Exception $Exception) {
-            QUI\System\Log::addError(
-                self::class . ' -> cloneJob() :: ' . $Exception->getMessage()
-            );
-
-            throw new QUI\Exception(array(
-                'quiqqer/queueserver',
-                'exception.queueserver.job.clone.error'
-            ));
-        }
-
-        return QUI::getDataBase()->getPDO()->lastInsertId();
+        return self::queueJob($CloneJob);
     }
 
     /**
