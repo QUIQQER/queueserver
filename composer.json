@@ -1,7 +1,7 @@
 {
   "name": "quiqqer/queueserver",
-  "type": "quiqqer-module",
-  "description": "QUIQQER Queue-Server Framework",
+  "type": "quiqqer-plugin",
+  "description": "QUIQQER Queue-Server - Execute queue jobs via cronjob",
   "version": "dev-master",
   "license": "GPL-3.0+",
   "authors": [
@@ -17,7 +17,7 @@
     "url": "http://www.pcsg.de"
   },
   "require": {
-    "quiqqer\/queuemanager": "dev-master"
+    "quiqqer\/queuemanager": "dev-master|dev-dev"
   },
   "autoload": {
     "psr-4": {

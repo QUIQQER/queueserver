@@ -1,40 +1,39 @@
-queueserver
+QUIQQER Queue Server
 ========
 
-QUIQQER Queue-Server Grundgerüst
+QUIQQER Queue Server plugin that executed job in a queue via a cronjob.
 
-Paketname:
+Package Name:
 
     quiqqer/queueserver
 
-
-Features (Funktionen)
+Features
 --------
-Automatisierte, asynchrone, verteilte Ausführung von Code
+* Runs jobs regularly via cronjob script
+* Cronjob to automatically delete old jobs
 
 Installation
 ------------
+The Package Name is: quiqqer/queueserver
 
-Der Paketname ist: quiqqer/queueserver
-
-
-Mitwirken
+Contribute
 ----------
-
-- Issue Tracker: 
-- Source Code: 
-
+- Project: https://dev.quiqqer.com/quiqqer/queueserver
+- Issue Tracker: https://dev.quiqqer.com/quiqqer/queueserver/issues
+- Source Code: https://dev.quiqqer.com/quiqqer/queueserver/tree/master
 
 Support
 -------
+If you found any errors, have wishes or suggestions for improvement,
+you can contact us by email at support@pcsg.de.
 
-Falls Sie einen Fehler gefunden haben oder Verbesserungen wünschen,
-senden Sie bitte eine E-Mail an support@pcsg.de.
+We will transfer your request to the responsible developers.
 
-
-Lizenz
+Usage
 -------
+* Set "QUIQQER Queue-Server" in the QUIQQER Queue Manager settings
+* Add and setup cronjob in QUIQQER cronjob manager 
 
-
-Entwickler
---------
+License
+-------
+GPL-3.0+

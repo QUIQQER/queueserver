@@ -4,12 +4,12 @@
     <groups name="quiqqer/queueserver" datatype="js">
 
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Queueserver]]></de>
-            <en><![CDATA[QUIQQER - Queueserver]]></en>
+            <de><![CDATA[QUIQQER - Queue-Server]]></de>
+            <en><![CDATA[QUIQQER - Queue Server]]></en>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[QUIQQER Queue-Server Grundgerüst]]></de>
-            <en><![CDATA[QUIQQER Queue-Server Framework]]>></en>
+            <de><![CDATA[Führt asynchrone Queue-Jobs mittels Cronjob aus]]></de>
+            <en><![CDATA[Execute asynchronous queue jobs via cronjob]]>></en>
         </locale>
 
         <locale name="joblist.panel.title">
