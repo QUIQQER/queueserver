@@ -8,6 +8,8 @@
             <locale group="quiqqer/queueserver" var="package.description"/>
         </description>
 
+        <image src="URL_OPT_DIR/quiqqer/queueserver/bin/images/Logo.jpg"/>
+
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
             <forum><![CDATA[https://community.quiqqer.com]]></forum>
