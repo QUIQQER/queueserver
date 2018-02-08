@@ -2,7 +2,7 @@
   "name": "quiqqer/queueserver",
   "type": "quiqqer-plugin",
   "description": "QUIQQER Queue-Server - Execute queue jobs via cronjob",
-  "version": "dev-master",
+  "version": "1.0.0",
   "license": "GPL-3.0+",
   "authors": [
     {
