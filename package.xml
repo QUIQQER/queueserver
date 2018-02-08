@@ -1,12 +1,16 @@
 <quiqqer>
     <package>
         <title>
-            <locale group="quiqqer/queueserver" var="package.title"/>
+            <locale group="quiqqer/queuemanager" var="package.title"/>
         </title>
 
         <description>
-            <locale group="quiqqer/queueserver" var="package.description"/>
+            <locale group="quiqqer/queuemanager" var="package.description"/>
         </description>
+
+        <preview>
+            <image src="URL_OPT_DIR/quiqqer/queuemanager/bin/images/preview/Backend_JobList.png"/>
+        </preview>
 
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
