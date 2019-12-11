@@ -1,27 +1,26 @@
 {
-  "name": "quiqqer/queueserver",
-  "type": "quiqqer-plugin",
-  "description": "QUIQQER Queue-Server - Execute queue jobs via cronjob",
-  "version": "dev-dev",
-  "license": "GPL-3.0+",
-  "authors": [
-    {
-      "name": "Patrick Müller",
-      "email": "p.mueller@pcsg.de",
-      "homepage": "http://www.pcsg.de",
-      "role": "Developer"
+    "name": "quiqqer\/queueserver",
+    "type": "quiqqer-plugin",
+    "description": "QUIQQER Queue-Server - Execute queue jobs via cronjob",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Patrick M\u00fcller",
+            "email": "p.mueller@pcsg.de",
+            "homepage": "http:\/\/www.pcsg.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@pcsg.de",
+        "url": "http:\/\/www.pcsg.de"
+    },
+    "require": {
+        "quiqqer\/queuemanager": "dev-master|dev-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "QUI\\QueueServer\\": "src\/QUI\/QueueServer"
+        }
     }
-  ],
-  "support": {
-    "email": "support@pcsg.de",
-    "url": "http://www.pcsg.de"
-  },
-  "require": {
-    "quiqqer\/queuemanager": "dev-master|dev-dev"
-  },
-  "autoload": {
-    "psr-4": {
-      "QUI\\QueueServer\\": "src/QUI/QueueServer"
-    }
-  }
 }
